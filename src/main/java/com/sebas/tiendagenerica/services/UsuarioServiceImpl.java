@@ -12,25 +12,25 @@ import org.springframework.stereotype.Service;
 public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
-    private UsuarioDAO usuariodao;
+    private UsuarioDAO UsuarioDAO;
 
     @Override
     public Iterable<UsuarioModel> findAll() {
-        return usuariodao.findAll();
+        return UsuarioDAO.findAll();
     }
 
     @Override
     public Optional<UsuarioModel> findById(Long id) {
-        return usuariodao.findById(id);
+        return UsuarioDAO.findById(id);
     }
 
     @Override
     public UsuarioModel save(UsuarioModel usuario) {
-        return usuariodao.save(usuario);
+        return UsuarioDAO.save(usuario);
     }
 
     @Override
     public void delete(Long id){
-        usuariodao.deleteById(id);
+        UsuarioDAO.deleteById(id);
     }
 }

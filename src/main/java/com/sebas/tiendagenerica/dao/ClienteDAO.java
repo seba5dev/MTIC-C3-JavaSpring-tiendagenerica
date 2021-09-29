@@ -1,11 +1,11 @@
 package com.sebas.tiendagenerica.dao;
 
-import com.sebas.tiendagenerica.model.UsuarioModel;
+import com.sebas.tiendagenerica.model.ClienteModel;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsuarioDAO extends JpaRepository<UsuarioModel, Long> {
+public interface ClienteDAO extends JpaRepository<ClienteModel, Long> {
     
 }

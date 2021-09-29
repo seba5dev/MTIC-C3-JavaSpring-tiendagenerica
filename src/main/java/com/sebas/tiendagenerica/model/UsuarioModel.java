@@ -20,21 +20,21 @@ public class UsuarioModel {
     private String cedula;
     private String nombre;
     private String password;
-    private String nombreCompleto;
+    private String nombre_completo;
     @Column(name = "email", nullable = false, unique = true, length = 255)
     private String correo;
     private boolean enabled;
 
-
     public UsuarioModel() {
     }
 
-    public UsuarioModel(Long id, String cedula, String nombre, String password, String nombreCompleto, String correo, boolean enabled) {
+    public UsuarioModel(Long id, String cedula, String nombre, String password, String nombre_completo, String correo,
+            boolean enabled) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
         this.password = password;
-        this.nombreCompleto = nombreCompleto;
+        this.nombre_completo = nombre_completo;
         this.correo = correo;
         this.enabled = enabled;
     }
@@ -71,12 +71,12 @@ public class UsuarioModel {
         this.password = password;
     }
 
-    public String getNombreCompleto() {
-        return this.nombreCompleto;
+    public String getNombre_completo() {
+        return this.nombre_completo;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre_completo(String nombre_completo) {
+        this.nombre_completo = nombre_completo;
     }
 
     public String getCorreo() {
@@ -119,8 +119,8 @@ public class UsuarioModel {
         return this;
     }
 
-    public UsuarioModel nombreCompleto(String nombreCompleto) {
-        setNombreCompleto(nombreCompleto);
+    public UsuarioModel nombre_completo(String nombre_completo) {
+        setNombre_completo(nombre_completo);
         return this;
     }
 
@@ -142,25 +142,22 @@ public class UsuarioModel {
             return false;
         }
         UsuarioModel usuarioModel = (UsuarioModel) o;
-        return Objects.equals(id, usuarioModel.id) && Objects.equals(cedula, usuarioModel.cedula) && Objects.equals(nombre, usuarioModel.nombre) && Objects.equals(password, usuarioModel.password) && Objects.equals(nombreCompleto, usuarioModel.nombreCompleto) && Objects.equals(correo, usuarioModel.correo) && enabled == usuarioModel.enabled;
+        return Objects.equals(id, usuarioModel.id) && Objects.equals(cedula, usuarioModel.cedula)
+                && Objects.equals(nombre, usuarioModel.nombre) && Objects.equals(password, usuarioModel.password)
+                && Objects.equals(nombre_completo, usuarioModel.nombre_completo)
+                && Objects.equals(correo, usuarioModel.correo) && enabled == usuarioModel.enabled;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cedula, nombre, password, nombreCompleto, correo, enabled);
+        return Objects.hash(id, cedula, nombre, password, nombre_completo, correo, enabled);
     }
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", cedula='" + getCedula() + "'" +
-            ", nombre='" + getNombre() + "'" +
-            ", password='" + getPassword() + "'" +
-            ", nombreCompleto='" + getNombreCompleto() + "'" +
-            ", correo='" + getCorreo() + "'" +
-            ", enabled='" + isEnabled() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", cedula='" + getCedula() + "'" + ", nombre='" + getNombre() + "'"
+                + ", password='" + getPassword() + "'" + ", nombre_completo='" + getNombre_completo() + "'"
+                + ", correo='" + getCorreo() + "'" + ", enabled='" + isEnabled() + "'" + "}";
     }
 
 }

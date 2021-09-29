@@ -56,7 +56,7 @@ public class UsuarioController {
         uUsuario.get().setCorreo(usuarioDetails.getCorreo());
         uUsuario.get().setEnabled(usuarioDetails.getEnabled());
         uUsuario.get().setNombre(usuarioDetails.getNombre());
-        uUsuario.get().setNombreCompleto(usuarioDetails.getNombreCompleto());
+        uUsuario.get().setNombre_completo(usuarioDetails.getNombre_completo());
         uUsuario.get().setPassword(usuarioDetails.getPassword());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(uUsuario.get()));
