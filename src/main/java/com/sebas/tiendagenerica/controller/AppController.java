@@ -9,30 +9,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AppController {
-    @GetMapping({"/","/login"})
-	public String index() {
-		return "index";
-	}
+    @GetMapping({ "/", "/login" })
+    public String index() {
+        return "index";
+    }
 
     @GetMapping("/menu")
-	public String menu() {
-		return "menu";
-	}
+    public String menu() {
+        return "menu";
+    }
 
     @GetMapping("/usuarios")
-	public String usuarios() {
-		return "usuarios";
-	}
+    public String usuarios() {
+        return "usuarios";
+    }
 
     @RequestMapping("/validar")
-    public String validar(HttpServletRequest request, HttpServletResponse response){
+    public String validar(HttpServletRequest request, HttpServletResponse response) {
         String usuario = request.getParameter("usuario");
         String contrasena = request.getParameter("contrasena");
 
-        if (usuario.equals("admininicial") && contrasena.equals("123456")){
+        if (usuario.equals("admininicial") && contrasena.equals("123456")) {
             return "menu";
-        }else{
+        } else {
             return "error";
         }
     }
+
 }
