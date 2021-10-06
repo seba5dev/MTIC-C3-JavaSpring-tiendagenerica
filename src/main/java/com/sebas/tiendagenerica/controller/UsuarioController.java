@@ -52,12 +52,11 @@ public class UsuarioController {
             return ResponseEntity.notFound().build();
         }
 
-        uUsuario.get().setCedula(usuarioDetails.getCedula());
-        uUsuario.get().setCorreo(usuarioDetails.getCorreo());
-        uUsuario.get().setEnabled(usuarioDetails.getEnabled());
-        uUsuario.get().setNombre(usuarioDetails.getNombre());
-        uUsuario.get().setNombre_completo(usuarioDetails.getNombre_completo());
+        uUsuario.get().setCedula_usuario(usuarioDetails.getCedula_usuario());
+        uUsuario.get().setEmail_usuario(usuarioDetails.getEmail_usuario());
+        uUsuario.get().setUsuario(usuarioDetails.getUsuario());
         uUsuario.get().setPassword(usuarioDetails.getPassword());
+        uUsuario.get().setNombre_usuario(usuarioDetails.getNombre_usuario());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(uUsuario.get()));
     }

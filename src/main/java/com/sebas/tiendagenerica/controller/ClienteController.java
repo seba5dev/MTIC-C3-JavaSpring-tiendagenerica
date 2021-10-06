@@ -52,11 +52,11 @@ public class ClienteController {
             return ResponseEntity.notFound().build();
         }
 
-        uCliente.get().setCedula(clienteDetails.getCedula());
-        uCliente.get().setNombre_completo(clienteDetails.getNombre_completo());
-        uCliente.get().setDireccion(clienteDetails.getDireccion());
-        uCliente.get().setTelefono(clienteDetails.getTelefono());
-        uCliente.get().setCorreo(clienteDetails.getCorreo());
+        uCliente.get().setCedula_cliente(clienteDetails.getCedula_cliente());
+        uCliente.get().setNombre_cliente(clienteDetails.getNombre_cliente());
+        uCliente.get().setDireccion_cliente(clienteDetails.getDireccion_cliente());
+        uCliente.get().setTelefono_cliente(clienteDetails.getTelefono_cliente());
+        uCliente.get().setEmail_cliente(clienteDetails.getEmail_cliente());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.save(uCliente.get()));
     }

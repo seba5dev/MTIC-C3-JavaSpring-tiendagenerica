@@ -15,52 +15,49 @@ public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(length = 11)
-    private String cedula;
-    private String nombre;
+    @Column(length = 20)
+    private Long cedula_usuario;
+    @Column(length = 255)
+    private String nombre_usuario;
+    private String usuario;
     private String password;
-    private String nombre_completo;
-    @Column(name = "email", nullable = false, unique = true, length = 255)
-    private String correo;
-    private boolean enabled;
+    @Column(name = "email_usuario", nullable = false, unique = true, length = 255)
+    private String email_usuario;
+
 
     public UsuarioModel() {
     }
 
-    public UsuarioModel(Long id, String cedula, String nombre, String password, String nombre_completo, String correo,
-            boolean enabled) {
-        this.id = id;
-        this.cedula = cedula;
-        this.nombre = nombre;
+    public UsuarioModel(Long cedula_usuario, String nombre_usuario, String usuario, String password, String email_usuario) {
+        this.cedula_usuario = cedula_usuario;
+        this.nombre_usuario = nombre_usuario;
+        this.usuario = usuario;
         this.password = password;
-        this.nombre_completo = nombre_completo;
-        this.correo = correo;
-        this.enabled = enabled;
+        this.email_usuario = email_usuario;
     }
 
-    public Long getId() {
-        return this.id;
+    public Long getCedula_usuario() {
+        return this.cedula_usuario;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCedula_usuario(Long cedula_usuario) {
+        this.cedula_usuario = cedula_usuario;
     }
 
-    public String getCedula() {
-        return this.cedula;
+    public String getNombre_usuario() {
+        return this.nombre_usuario;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    public String getUsuario() {
+        return this.usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPassword() {
@@ -71,46 +68,26 @@ public class UsuarioModel {
         this.password = password;
     }
 
-    public String getNombre_completo() {
-        return this.nombre_completo;
+    public String getEmail_usuario() {
+        return this.email_usuario;
     }
 
-    public void setNombre_completo(String nombre_completo) {
-        this.nombre_completo = nombre_completo;
+    public void setEmail_usuario(String email_usuario) {
+        this.email_usuario = email_usuario;
     }
 
-    public String getCorreo() {
-        return this.correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public boolean isEnabled() {
-        return this.enabled;
-    }
-
-    public boolean getEnabled() {
-        return this.enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public UsuarioModel id(Long id) {
-        setId(id);
+    public UsuarioModel cedula_usuario(Long cedula_usuario) {
+        setCedula_usuario(cedula_usuario);
         return this;
     }
 
-    public UsuarioModel cedula(String cedula) {
-        setCedula(cedula);
+    public UsuarioModel nombre_usuario(String nombre_usuario) {
+        setNombre_usuario(nombre_usuario);
         return this;
     }
 
-    public UsuarioModel nombre(String nombre) {
-        setNombre(nombre);
+    public UsuarioModel usuario(String usuario) {
+        setUsuario(usuario);
         return this;
     }
 
@@ -119,18 +96,8 @@ public class UsuarioModel {
         return this;
     }
 
-    public UsuarioModel nombre_completo(String nombre_completo) {
-        setNombre_completo(nombre_completo);
-        return this;
-    }
-
-    public UsuarioModel correo(String correo) {
-        setCorreo(correo);
-        return this;
-    }
-
-    public UsuarioModel enabled(boolean enabled) {
-        setEnabled(enabled);
+    public UsuarioModel email_usuario(String email_usuario) {
+        setEmail_usuario(email_usuario);
         return this;
     }
 
@@ -142,22 +109,24 @@ public class UsuarioModel {
             return false;
         }
         UsuarioModel usuarioModel = (UsuarioModel) o;
-        return Objects.equals(id, usuarioModel.id) && Objects.equals(cedula, usuarioModel.cedula)
-                && Objects.equals(nombre, usuarioModel.nombre) && Objects.equals(password, usuarioModel.password)
-                && Objects.equals(nombre_completo, usuarioModel.nombre_completo)
-                && Objects.equals(correo, usuarioModel.correo) && enabled == usuarioModel.enabled;
+        return Objects.equals(cedula_usuario, usuarioModel.cedula_usuario) && Objects.equals(nombre_usuario, usuarioModel.nombre_usuario) && Objects.equals(usuario, usuarioModel.usuario) && Objects.equals(password, usuarioModel.password) && Objects.equals(email_usuario, usuarioModel.email_usuario);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cedula, nombre, password, nombre_completo, correo, enabled);
+        return Objects.hash(cedula_usuario, nombre_usuario, usuario, password, email_usuario);
     }
 
     @Override
     public String toString() {
-        return "{" + " id='" + getId() + "'" + ", cedula='" + getCedula() + "'" + ", nombre='" + getNombre() + "'"
-                + ", password='" + getPassword() + "'" + ", nombre_completo='" + getNombre_completo() + "'"
-                + ", correo='" + getCorreo() + "'" + ", enabled='" + isEnabled() + "'" + "}";
+        return "{" +
+            " cedula_usuario='" + getCedula_usuario() + "'" +
+            ", nombre_usuario='" + getNombre_usuario() + "'" +
+            ", usuario='" + getUsuario() + "'" +
+            ", password='" + getPassword() + "'" +
+            ", email_usuario='" + getEmail_usuario() + "'" +
+            "}";
     }
+
 
 }
