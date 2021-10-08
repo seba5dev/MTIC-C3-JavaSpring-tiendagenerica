@@ -6,7 +6,9 @@ import com.sebas.tiendagenerica.dao.VentasDAO;
 import com.sebas.tiendagenerica.model.VentasModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VentasServiceImpl implements VentasService {
     @Autowired
     private VentasDAO ventasDAO;

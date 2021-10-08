@@ -4,8 +4,6 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,7 +11,6 @@ import javax.persistence.Table;
 @Table(name = "clientes")
 public class ClienteModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 20)
     private Long cedula_cliente;
     private String nombre_cliente;

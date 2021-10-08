@@ -4,8 +4,6 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,14 +12,12 @@ import javax.persistence.Table;
 public class UsuarioModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 20)
     private Long cedula_usuario;
-    @Column(length = 255)
     private String nombre_usuario;
     private String usuario;
     private String password;
-    @Column(name = "email_usuario", nullable = false, unique = true, length = 255)
+    @Column(nullable = false, unique = true, length = 255)
     private String email_usuario;
 
 
