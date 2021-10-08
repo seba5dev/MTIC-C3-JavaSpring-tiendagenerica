@@ -19,11 +19,11 @@ public class VentasModel {
     @Column(length = 20)
     private Long codigo_venta;
     @ManyToOne
-    @JoinColumn(name = "clientes", nullable = false, referencedColumnName = "cedula_cliente")
-    private Long cedula_cliente;
+    @JoinColumn(nullable = false)
+    private ClienteModel cedula_cliente;
     @ManyToOne
-    @JoinColumn(name = "usuarios", nullable = false, referencedColumnName = "cedula_usuario")
-    private Long cedula_usuario;
+    @JoinColumn(nullable = false)
+    private UsuarioModel cedula_usuario;
     private double ivaventa;
     private double total_venta;
     private double valor_venta;
@@ -32,7 +32,7 @@ public class VentasModel {
     public VentasModel() {
     }
 
-    public VentasModel(Long codigo_venta, Long cedula_cliente, Long cedula_usuario, double ivaventa, double total_venta, double valor_venta) {
+    public VentasModel(Long codigo_venta, ClienteModel cedula_cliente, UsuarioModel cedula_usuario, double ivaventa, double total_venta, double valor_venta) {
         this.codigo_venta = codigo_venta;
         this.cedula_cliente = cedula_cliente;
         this.cedula_usuario = cedula_usuario;
@@ -49,19 +49,19 @@ public class VentasModel {
         this.codigo_venta = codigo_venta;
     }
 
-    public Long getCedula_cliente() {
+    public ClienteModel getCedula_cliente() {
         return this.cedula_cliente;
     }
 
-    public void setCedula_cliente(Long cedula_cliente) {
+    public void setCedula_cliente(ClienteModel cedula_cliente) {
         this.cedula_cliente = cedula_cliente;
     }
 
-    public Long getCedula_usuario() {
+    public UsuarioModel getCedula_usuario() {
         return this.cedula_usuario;
     }
 
-    public void setCedula_usuario(Long cedula_usuario) {
+    public void setCedula_usuario(UsuarioModel cedula_usuario) {
         this.cedula_usuario = cedula_usuario;
     }
 
@@ -94,12 +94,12 @@ public class VentasModel {
         return this;
     }
 
-    public VentasModel cedula_cliente(Long cedula_cliente) {
+    public VentasModel cedula_cliente(ClienteModel cedula_cliente) {
         setCedula_cliente(cedula_cliente);
         return this;
     }
 
-    public VentasModel cedula_usuario(Long cedula_usuario) {
+    public VentasModel cedula_usuario(UsuarioModel cedula_usuario) {
         setCedula_usuario(cedula_usuario);
         return this;
     }
