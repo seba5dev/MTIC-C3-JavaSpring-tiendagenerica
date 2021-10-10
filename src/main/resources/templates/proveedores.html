@@ -12,7 +12,7 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../static/css/navbar.css" />
-		<title>Menu</title>
+		<title>Proveedores</title>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -42,7 +42,7 @@
 							>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link grow" href="/proveedores"
+							<a class="nav-link grow active" href="/proveedores"
 								>Proveedores</a
 							>
 						</li>
@@ -62,6 +62,78 @@
 					</ul>
 				</div>
 			</nav>
+		</div>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8 col-lg-6">
+					<form action="" class="form mt-5">
+						<div class="form-group">
+							<label for="nit">NIT:</label>
+							<input
+								type="number"
+								name="nit"
+								id="nit"
+								class="form-control"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="nombre">Nombre Proveedor:</label>
+							<input
+								type="text"
+								name="nombre"
+								id="nombre"
+								class="form-control"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="direccion">Dirección:</label>
+							<input
+								type="text"
+								name="direccion"
+								id="direccion"
+								class="form-control"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="telefono">Teléfono:</label>
+							<input
+								type="tel"
+								name="telefono"
+								id="telefono"
+								class="form-control"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="ciudad">Ciudad:</label>
+							<input
+								type="text"
+								name="ciudad"
+								id="ciudad"
+								class="form-control"
+							/>
+						</div>
+						<div class="row">
+							<div
+								class="btn-group btn-block mt-5 mx-auto"
+								role="group"
+							>
+								<button type="button" class="btn btn-primary">
+									Consultar
+								</button>
+								<button type="button" class="btn btn-primary">
+									Crear
+								</button>
+								<button type="button" class="btn btn-primary">
+									Actualizar
+								</button>
+								<button type="button" class="btn btn-primary">
+									Borrar
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 		<script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

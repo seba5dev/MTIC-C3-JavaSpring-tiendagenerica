@@ -12,7 +12,7 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../static/css/navbar.css" />
-		<title>Menu</title>
+		<title>Productos</title>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -47,7 +47,7 @@
 							>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link grow" href="/productos"
+							<a class="nav-link grow active" href="/productos"
 								>Productos</a
 							>
 						</li>
@@ -62,6 +62,36 @@
 					</ul>
 				</div>
 			</nav>
+		</div>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8 col-lg-6">
+					<form action="" class="form pt-5">
+						<div class="input-group mb-3">
+							<label
+								class="input-group-text"
+								for="archivoProducto"
+								>Nombre del Archivo</label
+							>
+							<input
+								type="file"
+								class="form-control"
+								id="archivoProducto"
+							/>
+						</div>
+						<div class="row">
+							<div
+								class="btn-group btn-block mt-5 mx-auto"
+								role="group"
+							>
+								<button type="button" class="btn btn-primary">
+									Cargar
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 		<script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
